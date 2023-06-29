@@ -3,6 +3,16 @@ from graphic_arts.start_game_banner import run_screensaver
 
 
 def attack(char_name: str, char_class: str) -> str:
+    """
+    Выполняет действие атаки в зависимости от класса персонажа.
+
+    Args:
+        char_name (str): Имя персонажа.
+        char_class (str): Класс персонажа.
+
+    Returns:
+        str: Урон, нанесенный атакой
+    """
     if char_class == 'warrior':
         return (f'{char_name} нанёс противнику урон, равный '
                 f'{5 + randint(3, 5)}')
@@ -15,6 +25,15 @@ def attack(char_name: str, char_class: str) -> str:
 
 
 def defence(char_name: str, char_class: str) -> str:
+    """Выполняет действие защиты в зависимости от класса персонажа.
+
+    Args:
+        char_name (str): Имя персонажа.
+        char_class (str): Класс персонажа.
+
+    Returns:
+        str: Количество заблокированного урона.
+    """
     if char_class == 'warrior':
         return (f'{char_name} блокировал {10 + randint(5, 10)} ед. урона')
     if char_class == 'mage':
@@ -24,6 +43,15 @@ def defence(char_name: str, char_class: str) -> str:
 
 
 def special(char_name: str, char_class: str) -> str:
+    """Выполняет специальное умение.
+
+    Args:
+        char_name (str): Имя персонажа.
+        char_class (str): Класс персонажа.
+
+    Returns:
+        str: Описание использованного специального умения.
+    """
     if char_class == 'warrior':
         return (f'{char_name} применил специальное умение '
                 f'«Выносливость {80 + 25}»')
@@ -34,6 +62,15 @@ def special(char_name: str, char_class: str) -> str:
 
 
 def start_training(char_name: str, char_class: str) -> str:
+    """Начинает тренировочную сессию для персонажа.
+
+    Args:
+        char_name (str): Имя персонажа.
+        char_class (str): Класс персонажа.
+
+    Returns:
+        str: Сообщение о завершении тренировочной сессии.
+    """
     if char_class == 'warrior':
         print(f'{char_name}, ты Воитель — великий мастер ближнего боя.')
     if char_class == 'mage':
@@ -58,6 +95,11 @@ def start_training(char_name: str, char_class: str) -> str:
 
 
 def choice_char_class() -> str:
+    """Запрашивает у пользователя выбор класса персонажа.
+
+    Returns:
+        str: Выбранный класс персонажа.
+    """
     approve_choice: str = ''
     char_class: str = ''
     while approve_choice != 'y':
